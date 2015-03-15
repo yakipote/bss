@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Tweets</h1>
-
+<%= search_form_for @search do |f| %>
+  <%= f.label :body_start, '本文' %>
+  <%= f.text_field :body_start %>
+  <div>
+    <%= f.submit '検索する' %>
+  </div>
+<% end %>
 <!-- <table>
   <thead>
     <tr>
@@ -23,6 +29,9 @@
     <% end %>
   </tbody>
 </table> -->
+
+
+
 <% @tweets.each do |post| %>
 <div style="background-color: #99cc00; margin:20px;">
   <%= post.body %>

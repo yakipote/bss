@@ -4,8 +4,10 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @search = Tweet.search(params[:q])
+    @tweets = @search.result
   end
+  
 
   # GET /tweets/1
   # GET /tweets/1.json
