@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
   <title>Bss</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-color:#66CCFF">
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -27,10 +27,11 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/posts">Home</a></li>
+          <li class="active"><a href="/tweets">Home</a></li>
           <% if user_signed_in? %>
   			<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |</li>
  			<li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+      <li><%= link_to "友達検索", "/friendSearch"  %></li>
 			<% else %>
 		  		<li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |</li>
 		  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
@@ -39,11 +40,27 @@
       </div><!--/.nav-collapse -->
     </div>
   </div>
-  <div class="container" style="padding:100px">
-  	<% if user_signed_in? %>
-  	<%= current_user.email %>としてログイン
-  	<%end%>
-<%= yield %>
+  <div class="container" style="padding:100px; ">
+  	
+
+<div class="row">
+  <div class="col-sm-4">
+  <% if user_signed_in? %>
+    <%= current_user.email %>としてログイン
+    <%end%>
+  </div>
+  <div class="col-sm-4 panel panel-info">
+    <div class="panel-body">
+    <%= yield %>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    
+  </div>
+
+</div>
+
+
  </div><!-- /.container -->
 </body>
 </html>
