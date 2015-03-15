@@ -19,7 +19,12 @@
     <%= f.label :date %><br>
     <%= f.datetime_select :date %>
   </div>
+  <div class="field">
+  <%= @post.index_posts_on_user_id = current_user.id%>
+  <%= f.text_area :user_id %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>

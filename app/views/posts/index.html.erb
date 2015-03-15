@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Body</th>
@@ -22,8 +21,14 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
+ <% @posts.each do |post| %>
+<div style="background-color: #99cc00; margin:20px;">
+  <%= post.body %>
+  <%= p post.user_id %>
+</div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to '投稿', new_post_path %>
