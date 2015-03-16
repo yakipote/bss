@@ -15,13 +15,13 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
-  <div class="field">
+ <!--  <div class="field">
     <%= f.label :userid %><br>
     <%= f.text_field :userid %>
-  </div>
+  </div> -->
   <div class="field">
   <%= @tweet.userid = current_user.id%>
-  <%= f.text_area :userid %>
+  <%= f.hidden_field :userid %>
   </div>
   <div class="actions">
     <%= f.submit %>

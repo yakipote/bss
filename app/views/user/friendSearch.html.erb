@@ -1,11 +1,14 @@
  
  <%= form_tag "/friendSearch" do %>
-<%= text_field_tag :email %>
+<%= text_field_tag :name %>
 <%= submit_tag "検索" %>
 <% end %>
 
 
-
-<% @user.each do |user| %>
-	<%= user.email %>
-<% end %>
+<table class="table">
+	<% @user.each do |user| %>
+		
+		 <tr><td><%= user.name %></td></tr>
+		
+	<% end %>
+</table>

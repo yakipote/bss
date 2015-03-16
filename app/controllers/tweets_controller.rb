@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
   def index
     @search = Tweet.search(params[:q])
     @tweets = @search.result
+    @users = User.all
   end
   
 

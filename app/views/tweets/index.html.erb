@@ -25,11 +25,12 @@
 </table> -->
 
 
-<table class="table">
-<% @tweets.each do |post| %>
-<tr><td> <%= post.body %></td><td><%= p post.userid %></td></tr>
+<% @tweets.each do |tweet| %>
+<h4><%=  @users[tweet.userid.to_i - 1].name  %></h4><br>
+<h5><%= tweet.body %></h5><br><br>
+<small><%= tweet.created_at %></small>
+<hr>
 <% end %>
-</table>
 <br>
 
 <button type="button" class="btn btn-info"><%= link_to 'New Tweet', new_tweet_path %></button>
